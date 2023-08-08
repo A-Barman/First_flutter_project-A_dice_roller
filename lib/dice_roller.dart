@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 
 class DiceRoller extends StatefulWidget {
+  const DiceRoller({super.key});
+  
   @override
-  State<DiceRoller> crateState() {
-    return 
+  State<DiceRoller> createState() {
+    return _DiceRollerState();
   }
 }
 
 class _DiceRollerState extends State<DiceRoller> {
+var activeDiceImage = 'assets/dice-images/dice-1.png';
+
+  void rollDice() {
+    setState (() {
+      activeDiceImage = 'assets/dice-images/dice-2.png';
+    });
+    
+  }
+  
   @override
   Widget build(context) {
     return Column(
@@ -17,6 +28,17 @@ class _DiceRollerState extends State<DiceRoller> {
           activeDiceImage,
           width: 200,
         ),
+        const SizedBox(height: 20),
+        TextButton(
+          onPressed: rollDice,
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.white,
+            textStyle: const TextStyle(
+              fontSize: 28,
+            ),
+          ),
+          child: const  Text('Roll Dice'),
+        )
       ],
     );
   }
