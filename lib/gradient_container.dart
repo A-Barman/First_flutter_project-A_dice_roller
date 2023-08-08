@@ -8,7 +8,7 @@ const endAlignment = Alignment.bottomRight;
 
 
 class GradientContainer extends StatelessWidget {
-  GradientContainer(this.color1, this.color2, {super.key});
+  const GradientContainer(this.color1, this.color2, {super.key});
 
   final Color color1;
   final Color color2;
